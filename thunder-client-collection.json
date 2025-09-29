@@ -1,0 +1,378 @@
+{
+  "name": "Brevo Webhook Test Collection",
+  "description": "Sample payloads for testing Brevo webhook events",
+  "requests": [
+    {
+      "name": "Campaign - Opened",
+      "method": "POST",
+      "url": "http://localhost:3000/webhook/brevo/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "opened",
+        "email": "example@domain.com",
+        "id": 12345,
+        "date": "2024-01-15 10:30:00",
+        "ts": 1705312200,
+        "message-id": "campaign.12345@relay.domain.com",
+        "ts_event": 1705312200,
+        "subject": "My Campaign Email",
+        "X-Mailin-custom": "campaign_header",
+        "sending_ip": "192.168.1.100",
+        "ts_epoch": 1705312200,
+        "template_id": 1,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/campaign123",
+        "contact_id": 8,
+        "tags": ["campaign_messages"],
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "ip_address": "192.168.1.1"
+      }
+    },
+    {
+      "name": "Campaign - Clicked",
+      "method": "POST",
+      "url": "http://localhost:3000/webhook/brevo/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "clicked",
+        "email": "example@domain.com",
+        "id": 12346,
+        "date": "2024-01-15 10:35:00",
+        "ts": 1705312500,
+        "message-id": "campaign.12346@relay.domain.com",
+        "ts_event": 1705312500,
+        "subject": "My Campaign Email",
+        "X-Mailin-custom": "campaign_header",
+        "sending_ip": "192.168.1.100",
+        "ts_epoch": 1705312500,
+        "template_id": 1,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/campaign123",
+        "contact_id": 8,
+        "tags": ["campaign_messages"],
+        "link_url": "https://example.com/product",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "ip_address": "192.168.1.1"
+      }
+    },
+    {
+      "name": "Campaign - Delivered",
+      "method": "POST",
+      "url": "http://localhost:3000/webhook/brevo/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "delivered",
+        "email": "example@domain.com",
+        "id": 12347,
+        "date": "2024-01-15 10:25:00",
+        "ts": 1705311900,
+        "message-id": "campaign.12347@relay.domain.com",
+        "ts_event": 1705311900,
+        "subject": "My Campaign Email",
+        "X-Mailin-custom": "campaign_header",
+        "sending_ip": "192.168.1.100",
+        "ts_epoch": 1705311900,
+        "template_id": 1,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/campaign123",
+        "contact_id": 8,
+        "tags": ["campaign_messages"]
+      }
+    },
+    {
+      "name": "Campaign - Hard Bounced",
+      "method": "POST",
+      "url": "http://localhost:3000/webhook/brevo/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "hard_bounced",
+        "email": "invalid@domain.com",
+        "id": 12348,
+        "date": "2024-01-15 10:20:00",
+        "ts": 1705311600,
+        "message-id": "campaign.12348@relay.domain.com",
+        "ts_event": 1705311600,
+        "subject": "My Campaign Email",
+        "X-Mailin-custom": "campaign_header",
+        "sending_ip": "192.168.1.100",
+        "ts_epoch": 1705311600,
+        "template_id": 1,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/campaign123",
+        "contact_id": 8,
+        "tags": ["campaign_messages"],
+        "bounce_reason": "Invalid email address",
+        "error_code": "550"
+      }
+    },
+    {
+      "name": "Campaign - Soft Bounced",
+      "method": "POST",
+      "url": "http://localhost:3000/webhook/brevo/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "soft_bounced",
+        "email": "example@domain.com",
+        "id": 12349,
+        "date": "2024-01-15 10:15:00",
+        "ts": 1705311300,
+        "message-id": "campaign.12349@relay.domain.com",
+        "ts_event": 1705311300,
+        "subject": "My Campaign Email",
+        "X-Mailin-custom": "campaign_header",
+        "sending_ip": "192.168.1.100",
+        "ts_epoch": 1705311300,
+        "template_id": 1,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/campaign123",
+        "contact_id": 8,
+        "tags": ["campaign_messages"],
+        "bounce_reason": "Mailbox full",
+        "error_code": "452"
+      }
+    },
+    {
+      "name": "Campaign - Spam",
+      "method": "POST",
+      "url": "http://localhost:3000/webhook/brevo/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "spam",
+        "email": "example@domain.com",
+        "id": 12350,
+        "date": "2024-01-15 10:40:00",
+        "ts": 1705312800,
+        "message-id": "campaign.12350@relay.domain.com",
+        "ts_event": 1705312800,
+        "subject": "My Campaign Email",
+        "X-Mailin-custom": "campaign_header",
+        "sending_ip": "192.168.1.100",
+        "ts_epoch": 1705312800,
+        "template_id": 1,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/campaign123",
+        "contact_id": 8,
+        "tags": ["campaign_messages"],
+        "reason": "User marked email as spam"
+      }
+    },
+    {
+      "name": "Campaign - Unsubscribe",
+      "method": "POST",
+      "url": "http://localhost:3000/webhook/brevo/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "unsubscribe",
+        "email": "example@domain.com",
+        "id": 12351,
+        "date": "2024-01-15 10:45:00",
+        "ts": 1705313100,
+        "message-id": "campaign.12351@relay.domain.com",
+        "ts_event": 1705313100,
+        "subject": "My Campaign Email",
+        "X-Mailin-custom": "campaign_header",
+        "sending_ip": "192.168.1.100",
+        "ts_epoch": 1705313100,
+        "template_id": 1,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/campaign123",
+        "contact_id": 8,
+        "tags": ["campaign_messages"],
+        "unsubscribe_url": "https://example.com/unsubscribe?token=abc123"
+      }
+    },
+    {
+      "name": "Transactional - Sent",
+      "method": "POST",
+      "url": "http://localhost:3001/webhook/brevo/transactional/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "sent",
+        "email": "example@domain.com",
+        "id": 20001,
+        "date": "2024-01-15 11:00:00",
+        "ts": 1705314000,
+        "message-id": "transactional.20001@relay.domain.com",
+        "ts_event": 1705314000,
+        "subject": "Welcome to our service!",
+        "X-Mailin-custom": "transactional_header",
+        "sending_ip": "192.168.1.101",
+        "ts_epoch": 1705314000,
+        "template_id": 22,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/trans123",
+        "contact_id": 8,
+        "tags": ["transac_messages"]
+      }
+    },
+    {
+      "name": "Transactional - Delivered",
+      "method": "POST",
+      "url": "http://localhost:3001/webhook/brevo/transactional/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "delivered",
+        "email": "example@domain.com",
+        "id": 20002,
+        "date": "2024-01-15 11:05:00",
+        "ts": 1705314300,
+        "message-id": "transactional.20002@relay.domain.com",
+        "ts_event": 1705314300,
+        "subject": "Welcome to our service!",
+        "X-Mailin-custom": "transactional_header",
+        "sending_ip": "192.168.1.101",
+        "ts_epoch": 1705314300,
+        "template_id": 22,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/trans123",
+        "contact_id": 8,
+        "tags": ["transac_messages"]
+      }
+    },
+    {
+      "name": "Transactional - First Opening",
+      "method": "POST",
+      "url": "http://localhost:3001/webhook/brevo/transactional/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "first_opening",
+        "email": "example@domain.com",
+        "id": 20003,
+        "date": "2024-01-15 11:10:00",
+        "ts": 1705314600,
+        "message-id": "transactional.20003@relay.domain.com",
+        "ts_event": 1705314600,
+        "subject": "Welcome to our service!",
+        "X-Mailin-custom": "transactional_header",
+        "sending_ip": "192.168.1.101",
+        "ts_epoch": 1705314600,
+        "template_id": 22,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/trans123",
+        "contact_id": 8,
+        "tags": ["transac_messages"],
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "ip_address": "192.168.1.1"
+      }
+    },
+    {
+      "name": "Transactional - Clicked",
+      "method": "POST",
+      "url": "http://localhost:3001/webhook/brevo/transactional/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "clicked",
+        "email": "example@domain.com",
+        "id": 20004,
+        "date": "2024-01-15 11:15:00",
+        "ts": 1705314900,
+        "message-id": "transactional.20004@relay.domain.com",
+        "ts_event": 1705314900,
+        "subject": "Welcome to our service!",
+        "X-Mailin-custom": "transactional_header",
+        "sending_ip": "192.168.1.101",
+        "ts_epoch": 1705314900,
+        "template_id": 22,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/trans123",
+        "contact_id": 8,
+        "tags": ["transac_messages"],
+        "link_url": "https://example.com/verify-email",
+        "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+        "ip_address": "192.168.1.1"
+      }
+    },
+    {
+      "name": "Transactional - Invalid Email",
+      "method": "POST",
+      "url": "http://localhost:3001/webhook/brevo/transactional/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "invalid_email",
+        "email": "notanemail",
+        "id": 20005,
+        "date": "2024-01-15 11:20:00",
+        "ts": 1705315200,
+        "message-id": "transactional.20005@relay.domain.com",
+        "ts_event": 1705315200,
+        "subject": "Welcome to our service!",
+        "X-Mailin-custom": "transactional_header",
+        "sending_ip": "192.168.1.101",
+        "ts_epoch": 1705315200,
+        "template_id": 22,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/trans123",
+        "contact_id": 8,
+        "tags": ["transac_messages"],
+        "error_reason": "Invalid email format",
+        "error_code": "400"
+      }
+    },
+    {
+      "name": "Transactional - Blocked",
+      "method": "POST",
+      "url": "http://localhost:3001/webhook/brevo/transactional/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "blocked",
+        "email": "example@domain.com",
+        "id": 20006,
+        "date": "2024-01-15 11:25:00",
+        "ts": 1705315500,
+        "message-id": "transactional.20006@relay.domain.com",
+        "ts_event": 1705315500,
+        "subject": "Welcome to our service!",
+        "X-Mailin-custom": "transactional_header",
+        "sending_ip": "192.168.1.101",
+        "ts_epoch": 1705315500,
+        "template_id": 22,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/trans123",
+        "contact_id": 8,
+        "tags": ["transac_messages"],
+        "block_reason": "Email address is blacklisted",
+        "block_type": "blacklist"
+      }
+    },
+    {
+      "name": "Transactional - Error",
+      "method": "POST",
+      "url": "http://localhost:3001/webhook/brevo/transactional/test",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "event": "error",
+        "email": "example@domain.com",
+        "id": 20007,
+        "date": "2024-01-15 11:30:00",
+        "ts": 1705315800,
+        "message-id": "transactional.20007@relay.domain.com",
+        "ts_event": 1705315800,
+        "subject": "Welcome to our service!",
+        "X-Mailin-custom": "transactional_header",
+        "sending_ip": "192.168.1.101",
+        "ts_epoch": 1705315800,
+        "template_id": 22,
+        "mirror_link": "https://app-smtp.brevo.com/log/preview/trans123",
+        "contact_id": 8,
+        "tags": ["transac_messages"],
+        "error_message": "Template rendering failed",
+        "error_code": "500"
+      }
+    }
+  ]
+}
